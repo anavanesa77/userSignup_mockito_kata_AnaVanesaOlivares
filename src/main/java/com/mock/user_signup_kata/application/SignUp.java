@@ -19,7 +19,12 @@ public class SignUp {
     }
 
     public void registerUser(User user) {
-
+        List<User> users = new ArrayList<>();
+        users = userRepository.getUserByEmail(user);
+        if (users.isEmpty()) {
+            userRepository.saverUser(user);
+            emailService.sendEmail(user);
+        }
     }
 }
 
