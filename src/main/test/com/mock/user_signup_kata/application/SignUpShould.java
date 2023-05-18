@@ -39,4 +39,17 @@ class SignUpShould {
     }
 
 
+    @Test
+    void throw_error_when_user_is_alredy_registered() {
+        User expectedUser = new User("Rocio", "Ramos", 000000, "Cognitive", "rocioramos@prueba.es");
+
+        Mockito.when(mockedUserRepository.getUserByEmail(expectedUser)).thenThrow(new IllegalArgumentException());
+        signUp.registerUser(expectedUser);
+
+        Mockito.verify(mockedUserRepository).saverUser(expectedUser);
+        Mockito.verify(mockedEmailRepository).sendEmail(expectedUser);
+
+    }
+
+
 }
