@@ -24,6 +24,8 @@ public class SignUp {
         if (users.isEmpty()) {
             userRepository.saverUser(user);
             emailService.sendEmail(user);
+        }else{
+            throw new IllegalArgumentException("That user is already registered");
         }
     }
 }
