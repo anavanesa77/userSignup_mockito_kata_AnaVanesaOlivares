@@ -4,6 +4,9 @@ import com.muving.muving_backend_hexagonal.domain.User;
 import com.muving.muving_backend_hexagonal.infrastructure.EmailService;
 import com.muving.muving_backend_hexagonal.infrastructure.UserRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SignUp {
 
     UserRepository userRepository;
@@ -16,5 +19,12 @@ public class SignUp {
     }
 
     public void registerUser(User user) {
+        List<User> users = new ArrayList<>();
+        users= userRepository.getUserByEmail(user);
+        if(users.isEmpty()){
+            userRepository.saverUser(user);
+            emailService.sendEmail(user);
+        }
+
     }
 }
