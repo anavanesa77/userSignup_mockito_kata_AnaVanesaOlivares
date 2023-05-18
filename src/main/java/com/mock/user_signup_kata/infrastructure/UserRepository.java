@@ -1,6 +1,6 @@
-package com.muving.muving_backend_hexagonal.infrastructure;
+package com.mock.user_signup_kata.infrastructure;
 
-import com.muving.muving_backend_hexagonal.domain.User;
+import com.mock.user_signup_kata.domain.User;
 
 import java.util.List;
 

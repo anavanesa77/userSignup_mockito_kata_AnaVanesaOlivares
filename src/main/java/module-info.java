@@ -3,6 +3,6 @@ module com.muving.muving_backend_hexagonal {
     requires javafx.fxml;
 
 
-    opens com.muving.muving_backend_hexagonal to javafx.fxml;
-    exports com.muving.muving_backend_hexagonal;
+    opens com.mock.user_signup_kata to javafx.fxml;
+    exports com.mock.user_signup_kata;
 }

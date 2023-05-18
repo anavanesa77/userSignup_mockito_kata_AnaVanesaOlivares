@@ -1,4 +1,4 @@
-package com.muving.muving_backend_hexagonal;
+package com.mock.user_signup_kata;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

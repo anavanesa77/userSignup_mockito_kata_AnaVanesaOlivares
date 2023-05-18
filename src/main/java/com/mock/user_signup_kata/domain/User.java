@@ -1,4 +1,4 @@
-package com.muving.muving_backend_hexagonal.domain;
+package com.mock.user_signup_kata.domain;
 
 public class User {
 
